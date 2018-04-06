@@ -1,11 +1,11 @@
 package dziedzic.rafal.StudentCRUD.controller;
 
 import dziedzic.rafal.StudentCRUD.dao.StudentDaoJpa;
+import dziedzic.rafal.StudentCRUD.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class StartController {
@@ -18,4 +18,20 @@ public class StartController {
         modelMap.addAttribute("studentList", studentDaoJpa.findAll());
         return "student";
     }
+
+    @GetMapping(value = "/addNewStudent")
+    public String add(ModelMap modelMap) {
+        modelMap.addAttribute("student",new Student());
+        return "addNewStudent";
+    }
+
+    @PostMapping(value = "/addNewStudent")
+    public String addStudent(@ModelAttribute Student student, ModelMap modelMap) {
+        modelMap.addAttribute("student", student);
+        studentDaoJpa.save(student);
+        return  "redirect:/addNewStudent";
+    }
+
+
+
 }
