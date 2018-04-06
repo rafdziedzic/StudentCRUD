@@ -2,6 +2,7 @@ package dziedzic.rafal.StudentCRUD.controller;
 
 import dziedzic.rafal.StudentCRUD.dao.StudentDaoJpa;
 import dziedzic.rafal.StudentCRUD.model.Student;
+import dziedzic.rafal.StudentCRUD.services.StudentServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,6 +14,9 @@ public class StartController {
     @Autowired
     StudentDaoJpa studentDaoJpa;
 
+    @Autowired
+    StudentServices studentServices;
+
     @RequestMapping(value = "/studentList", method = RequestMethod.GET)
     public String ShowAllStudent(ModelMap modelMap) {
         modelMap.addAttribute("studentList", studentDaoJpa.findAll());
@@ -21,7 +25,7 @@ public class StartController {
 
     @GetMapping(value = "/addNewStudent")
     public String add(ModelMap modelMap) {
-        modelMap.addAttribute("student",new Student());
+        modelMap.addAttribute("student", new Student());
         return "addNewStudent";
     }
 
@@ -29,9 +33,14 @@ public class StartController {
     public String addStudent(@ModelAttribute Student student, ModelMap modelMap) {
         modelMap.addAttribute("student", student);
         studentDaoJpa.save(student);
-        return  "redirect:/addNewStudent";
+        return "redirect:/addNewStudent";
     }
 
 
+    @RequestMapping(value = "/removeStudent")
+    public String removeStudent(@RequestParam("id") Long id) {
+        studentServices.removeStudent(id);
+        return "redirect:/studentList";
+    }
 
 }

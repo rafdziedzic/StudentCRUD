@@ -41,6 +41,9 @@
                     <th th:text="${student.name}" scope="col">Name</th>
                     <th th:text="${student.surname}" scope="col">Surname</th>
                     <th th:text="${student.age}" scope="col">Age</th>
+                    <th><a th:href="@{/removeStudent(id=${student.id})}" role="button" scope="col"
+                           th:type="submit"
+                           class="btn btn-danger">Usun</a></th>
                 </tr>
             </div>
             </tbody>
@@ -48,7 +51,7 @@
 
 
         <br>
-        <a href="/addNewStudent" button type="button" class="btn btn-warning">Dodaj nowego Studenta</button></a>
+        <a href="/addNewStudent" button type="button" class="btn btn-success">Dodaj nowego Studenta</button></a>
 
     </div>
 

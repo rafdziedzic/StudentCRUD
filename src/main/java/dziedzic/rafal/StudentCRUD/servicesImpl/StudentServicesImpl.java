@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -26,4 +27,12 @@ public class StudentServicesImpl implements StudentServices {
         javax.persistence.Query query = entityManager.createQuery("SELECT s FROM Student s WHERE s.name='" + name + "' AND s.surname='" + surname + "'");
         return query.getResultList();
     }
+
+    @Override
+    public void removeStudent(Long id) {
+        //Student student = new Student();
+        // student.getId();
+        studentDaoJpa.deleteById(id);
+    }
 }
+

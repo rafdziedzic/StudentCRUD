@@ -8,4 +8,7 @@ import java.util.List;
 @Service
 public interface StudentServices {
     List<Student> findByNameAndSurname(String name, String surname);
+
+    void removeStudent(Long id);
+
 }
