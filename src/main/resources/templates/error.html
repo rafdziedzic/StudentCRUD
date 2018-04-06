@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Search </title>
+    <link href="../static/css/bootstrap.css"
+          th:href="@{css/bootstrap.css}" rel="stylesheet" media="screen"/>
+
+</head>
+<body>
+
+<div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8">
+        <h3>Strona na którą próbowłeś się dostać nie istnieje </h3>
+        <h4>Zapraszamy do skorzystania z innych możliwości</h4>
+
+        <br>
+        <h5>Pełna Lista Studentów</h5>
+        <a href="/studentList" button type="button" class="btn btn-info">Lista Studentów</a>
+        <h5>Dodawanie Kolejnych Studentów</h5>
+        <a href="/addNewStudent" button type="button" class="btn btn-info">Dodaj nowego Studenta</button></a>
+        <h5>Przesukiwanie Listy Studentów</h5>
+        <a href="/search"  button type="button" class="btn btn-info">Wyszukiwarka</button></a>
+
+    </div>
+    <div class="col-2"></div>
+</div>
+
+
+</body>
+</html>
