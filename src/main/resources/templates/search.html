@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Search </title>
+    <link href="../static/css/bootstrap.css"
+          th:href="@{css/bootstrap.css}" rel="stylesheet" media="screen"/>
+
+</head>
+<body>
+
+<div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8">
+        <h1>Zakres wyszukiwania :</h1>
+        <!--// odwołuje się do searchEngine które jest napisane w controlerz -->
+        <form action="#" th:action="@{/searchEngine}" method="post">
+            <div class="form-group row">
+                <div class="col-10">
+                    Imię Studenta :</br>
+                    <input type="text" th:field="${student.name}"/> </br>
+                    Nazwisko Studenta : </br>
+                    <input type="text" th:field="${student.surname}"/>
+                </div>
+            </div>
+            <input type="submit" value="Szukaj..."/>
+        </form>
+
+        <br>
+        <a href="/studentList" class="btn btn-primary" role="button" aria-pressed="true">Lista Studentów</a>
+
+    </div>
+    <div class="col-2"></div>
+</div>
+
+
+</body>
+</html>
