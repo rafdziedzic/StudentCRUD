@@ -1,0 +1,9 @@
+INSERT INTO student (`name`, `surname`, `age`) VALUES ('Rafal', 'Dziedzic', 26);
+INSERT INTO student (`name`, `surname`, `age`) VALUES ('Michal', 'Kowalski', 23);
+INSERT INTO student (`name`, `surname`, `age`) VALUES ('Anna', 'Nowak', 32);
+INSERT INTO student (`name`, `surname`, `age`) VALUES ('Kamil', 'Lasocki', 28);
+INSERT INTO student (`name`, `surname`, `age`) VALUES ('Michal', 'Ambrozik', 19);
+INSERT INTO student (`name`, `surname`, `age`) VALUES ('Syriusz', 'Knot', 21);
+INSERT INTO student (`name`, `surname`, `age`) VALUES ('Lukasz', 'Lewandowski', 38);
+INSERT INTO student (`name`, `surname`, `age`) VALUES ('Nella', 'Kownacka', 45);
+INSERT INTO student (`name`, `surname`, `age`) VALUES ('Olivier', 'Knotek', 17);
