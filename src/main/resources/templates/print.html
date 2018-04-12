@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
-    <title>List Student</title>
+    <title>Prepare Print</title>
     <link href="../static/css/bootstrap.css"
           th:href="@{css/bootstrap.css}" rel="stylesheet" media="screen"/>
 
@@ -17,11 +17,6 @@
             <div class="col-10">
                 <h1>Lista Studentów</h1>
             </div>
-            <div class="col-2">
-                <h1>
-                    <a href="/search" button type="button" class="btn btn-info">Wyszukiwarka</button></a>
-                </h1>
-            </div>
         </div>
 
         <table class="table table-striped">
@@ -31,7 +26,7 @@
                 <th>Name</th>
                 <th>Surname</th>
                 <th>Age</th>
-                <th></th>
+                <th>Comments</th>
 
             </tr>
             </thead>
@@ -42,26 +37,16 @@
                     <th th:text="${student.name}" scope="col">Name</th>
                     <th th:text="${student.surname}" scope="col">Surname</th>
                     <th th:text="${student.age}" scope="col">Age</th>
-                    <th><a th:href="@{/removeStudent(id=${student.id})}" role="button" scope="col"
-                           th:type="submit"
-                           class="btn btn-danger">Usun</a></th>
-
+                    <th></th>
                 </tr>
             </div>
             </tbody>
         </table>
 
+        <!--<a class='north' href="javascript:window.print()" title="Drukuj">DRUKUJ</a>-->
 
-        <br>
 
-        <div class="row">
-            <div class="col-9">
-                <a href="/addNewStudent" button type="button" class="btn btn-success">Dodaj nowego Studenta</button></a>
-            </div>
-            <div class="col-3">
-                <a href="/print" button type="button" class="btn btn-warning">Drukuj</button></a>
-            </div>
-        </div>
+        <button type="button" class="btn btn-warning"><a class='north' href="javascript:window.print()" title="Drukuj">DRUKUJ</a></button>
 
     </div>
 

@@ -25,6 +25,12 @@ public class StartController {
         return "student";
     }
 
+    @RequestMapping(value = "/print", method = RequestMethod.GET)
+    public String PrintStudent(ModelMap modelMap) {
+        modelMap.addAttribute("studentList", studentDaoJpa.findAll());
+        return "print";
+    }
+
     @GetMapping(value = "/addNewStudent")
     public String add(ModelMap modelMap) {
         modelMap.addAttribute("student", new Student());
