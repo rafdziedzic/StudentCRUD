@@ -1,6 +1,7 @@
 package dziedzic.rafal.StudentCRUD.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Entity

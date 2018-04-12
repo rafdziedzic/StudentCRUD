@@ -26,9 +26,13 @@
             <div class="form-group row">
                 <div class="col-10">
                     Imię Studenta :</br>
-                    <input type="text" th:field="${student.name}"/> </br>
+                    <input type="text" th:field="${student.name}"
+                           required pattern="[A-Za-z]{1,29}"
+                           title="Username should only letters. e.g. John"/> </br>
                     Nazwisko Studenta : </br>
-                    <input type="text" th:field="${student.surname}"/>
+                    <input type="text" th:field="${student.surname}"
+                           required pattern="[A-Za-z]{1,29}"
+                           title="Username should only letters. e.g. John"/>
                 </div>
             </div>
             <input type="submit" value="Szukaj..."/>

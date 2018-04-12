@@ -24,7 +24,11 @@
                 <div class="col-10">
                     <input th:type="text" th:field="${student.name}" placeholder="Enter Name Student"
                            class="form-control"
-                           id="example-email-input"/>
+                           id="example-email-input" required pattern="[A-Za-z]{1,29}"
+                           title="Username should only letters. e.g. John"/>
+                    <!--documentation required pattern-->
+                    <!--https://webdesign.tutsplus.com/tutorials/html5-form-validation-with-the-pattern-attribute&#45;&#45;cms-25145-->
+
                 </div>
             </div>
 
@@ -32,7 +36,9 @@
                 <label for="category-text-input" class="col-2 col-form-label">Surname</label>
                 <div class="col-10">
                     <input th:type="text" th:field="${student.surname}" placeholder="Enter Surname" class="form-control"
-                           id="category-text-input"/>
+                           id="category-text-input"
+                           required pattern="[A-Za-z]{1,29}"
+                           title="Username should only letters. e.g. John"/>
                 </div>
             </div>
 
@@ -40,7 +46,9 @@
                 <label for="price-text-input" class="col-2 col-form-label">Age</label>
                 <div class="col-10">
                     <input th:type="text" th:field="${student.age}" placeholder="Enter Age" class="form-control"
-                           id="price-text-input"/>
+                           id="price-text-input"
+                           required pattern="[1-99]{1,2}"
+                           title="Username should only numbers. e.g. 23"/>
                 </div>
             </div>
 
